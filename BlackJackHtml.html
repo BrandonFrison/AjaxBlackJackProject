@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BlackJack</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="Blackjack.js"></script>
+
+<style>
+    td {
+        width: 125px;
+        height: 175px;
+        background: linear-gradient(#0F975B,#11970F,#48850F);
+    }
+    body {
+        background-image: url("Images/CasinoBG.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 575px;
+    }
+    th {
+        background-color:green;
+        color:white;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+        width: 112px;
+    }
+    p{
+        
+    }
+    #title{
+        color:white;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+    }
+    span{
+        color:black;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+    }
+    input{
+        color:green;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+    }
+    #bet{
+        border-style: inset;
+        border-color: red;
+        color: green;
+    }
+
+    #wallet{
+        border-style: inset;
+        border-color: green;
+        color: red;
+    }
+
+    .buts{
+        padding: 15px 32px;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: outset;
+        background-color: darkred;
+    }
+
+    .chips {
+        height: 154px;
+        width: 154px;
+        cursor: pointer;
+        border: outset;
+    }
+
+    #chip1{
+        background-image: url("Images/1Chip.jpg");
+    }
+
+    #chip2{
+        background-image: url("Images/5Chip.jpg");
+    }
+
+    #chip3{
+        background-image: url("Images/25Chip.jpg");
+    }
+
+    #chip4{
+        background-image: url("Images/100Chip.jpg");
+    }
+
+    #chip5{
+        background-image: url("Images/500Chip.jpg");
+    }
+
+</style>
+</head>
+<body>
+    <a id=title>Brandon Frison's Blackjack</a><br>
+    <table align=center cellpadding=0 cellspacing=10 border=1;>
+        <tr>
+            <th>Dealer's Hand:</th>
+        </tr>
+        <tr>
+            <td id=dcard0></td>
+            <td id=dcard1></td>
+            <td id=dcard2></td>
+            <td id=dcard3></td>
+            <td id=dcard4></td>
+        </tr>
+        <tr>
+            <th>Player's Hand:</th>
+        </tr>
+        <tr>
+            <td id=pcard0></td>
+            <td id=pcard1></td>
+            <td id=pcard2></td>
+            <td id=pcard3></td>
+            <td id=pcard4></td>
+        </tr>
+    </table>
+    <hr><br>
+<span id=defmsg>Welcome to Blackjack<br>Enter your name and place your bet then Click "Deal" to start</span><span id="lwmsg"></span><span id="dhand"></span>
+<br><input type="text" id="pName" value="Enter your name here"><br><span>BET:$</span><label id=bet>0</label><br><span>Wallet:$</span><label id="wallet">500</label><br>
+    <button id="chip1" class="chips" onclick="chipbet1();"></button>
+    <button id="chip2" class="chips" onclick="chipbet2();"></button>
+    <button id="chip3" class="chips" onclick="chipbet3();"></button>
+    <button id="chip4" class="chips" onclick="chipbet4();"></button>
+    <button id="chip5" class="chips" onclick="chipbet5();"></button><hr><hr>
+<button id="ngbut" class="buts" onclick="newGameFunction();" disabled="true">DEAL</button>
+    <button id="hitbut" class="buts" onclick="hitFunction();" disabled="true">HIT</button>
+    <button id="standbut" class="buts" onclick="standFunction();" disabled="true">STAND</button>
+    <button id="insbut" class="buts" onclick="insuranceFunction();" disabled="true">INSURANCE</button>
+    <button id="ddbut" class="buts" onclick="doubledownFunction();" disabled="true">DOUBLE DOWN</button>
+    <br><br>
+<div id="testing"></div><br><br><br>
+</body>
+</html>
